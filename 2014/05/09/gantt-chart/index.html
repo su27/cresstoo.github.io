@@ -179,18 +179,24 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于Highcharts"><span class="toc-text">关于Highcharts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊甘特图的需求"><span class="toc-text">特殊甘特图的需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果图（Excel制作）："><span class="toc-text">效果图（Excel制作）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果和代码如下："><span class="toc-text">效果和代码如下：</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于highcharts"><span class="toc-text"> 关于Highcharts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊甘特图的需求"><span class="toc-text"> 特殊甘特图的需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果图excel制作"><span class="toc-text"> 效果图（Excel制作）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果和代码如下"><span class="toc-text"> 效果和代码如下：</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h3 id="关于Highcharts"><a href="#关于Highcharts" class="headerlink" title="关于Highcharts"></a>关于Highcharts</h3><p><a href="http://www.highcharts.com/" target="_blank" rel="noopener">Highcharts</a>是一个纯正的JS图表库，内置了十几种图表，支持数组操作，从兼容性、可扩展性包括文档来看目前是最强大的免费图表库。研究了一段时间，不需要很多编程技巧也可以轻松做出动态图表来。<br><a id="more"></a></p>
-<h3 id="特殊甘特图的需求"><a href="#特殊甘特图的需求" class="headerlink" title="特殊甘特图的需求"></a>特殊甘特图的需求</h3><p>手里有一个关于中国40年时间内真实通货膨胀系数的选题。除了需要用曲线图把通胀指数绘制出来，标示出40年间中国经济政策的主要管理者的人选变化，用甘特图来表示历届国家总理、央行行长、财政部长的人选和任期。</p>
-<h3 id="效果图（Excel制作）："><a href="#效果图（Excel制作）：" class="headerlink" title="效果图（Excel制作）："></a>效果图（Excel制作）：</h3><p><img src="http://duran.qiniudn.com/media/gantt.png" alt="Excel制作的甘特图"></p>
-<p>用Highcharts来实现整个图表，有两个难点，一是任期变化的甘特图在Highcharts中并没有现成的例子，二是需要将上面的曲线图与下面的甘特图联动<code>mouse event</code>和<code>share tooltips</code>。<br>翻遍了官方论坛和stackoverflow，最后确定还是写一组函数来处理任期数据，比把任期数据写进data series更科学。</p>
-<h3 id="效果和代码如下："><a href="#效果和代码如下：" class="headerlink" title="效果和代码如下："></a>效果和代码如下：</h3><iframe scrolling="no" width="100%" height="300px" src="//jsfiddle.net/ms4Xu/embedded/result,js,html/light" frameborder="0" allowfullscreen></iframe>
+        <h3 id="关于highcharts"><a class="markdownIt-Anchor" href="#关于highcharts"></a> 关于Highcharts</h3>
+<p><a href="http://www.highcharts.com/" target="_blank" rel="noopener">Highcharts</a>是一个纯正的JS图表库，内置了十几种图表，支持数组操作，从兼容性、可扩展性包括文档来看目前是最强大的免费图表库。研究了一段时间，不需要很多编程技巧也可以轻松做出动态图表来。</p>
+<a id="more"></a>
+<h3 id="特殊甘特图的需求"><a class="markdownIt-Anchor" href="#特殊甘特图的需求"></a> 特殊甘特图的需求</h3>
+<p>手里有一个关于中国40年时间内真实通货膨胀系数的选题。除了需要用曲线图把通胀指数绘制出来，标示出40年间中国经济政策的主要管理者的人选变化，用甘特图来表示历届国家总理、央行行长、财政部长的人选和任期。</p>
+<h3 id="效果图excel制作"><a class="markdownIt-Anchor" href="#效果图excel制作"></a> 效果图（Excel制作）：</h3>
+<p><img src="http://duran.qiniudn.com/media/gantt.png" alt="Excel制作的甘特图"></p>
+<p>用Highcharts来实现整个图表，有两个难点，一是任期变化的甘特图在Highcharts中并没有现成的例子，二是需要将上面的曲线图与下面的甘特图联动<code>mouse event</code>和<code>share tooltips</code>。<br>
+翻遍了官方论坛和stackoverflow，最后确定还是写一组函数来处理任期数据，比把任期数据写进data series更科学。</p>
+<h3 id="效果和代码如下"><a class="markdownIt-Anchor" href="#效果和代码如下"></a> 效果和代码如下：</h3>
+<iframe scrolling="no" width="100%" height="300px" src="//jsfiddle.net/ms4Xu/embedded/result,js,html/light" frameborder="0" allowfullscreen></iframe>
 <p>jsfiddle似乎被墙了，<a href="http://jsfiddle.net/ms4Xu/light/" target="_blank" rel="noopener">请翻墙访问</a></p>
 
       

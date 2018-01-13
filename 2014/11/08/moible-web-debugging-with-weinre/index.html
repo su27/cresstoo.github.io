@@ -179,15 +179,17 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#利用Node-js-Express快速搭建本地服务器环境"><span class="toc-text">利用Node.js+Express快速搭建本地服务器环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装配置Weinre"><span class="toc-text">安装配置Weinre</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资源"><span class="toc-text">参考资源</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#利用nodejsexpress快速搭建本地服务器环境"><span class="toc-text"> 利用Node.js+Express快速搭建本地服务器环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装配置weinre"><span class="toc-text"> 安装配置Weinre</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资源"><span class="toc-text"> 参考资源</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <p>在进行移动网页开发的时候，利用Chrome自带的Emulation在PC上进行调试是非常方便的。而在Mac上利用Safari的开发功能，也可以实现在移动设备的Safari同步调试效果。但是Chrome无法替代真机效果，而Safari大法无法支持其他App的webview效果（除非你是该App的开发者），Android等其他设备的需求也无法满足。<a href="http://people.apache.org/~pmuellr/weinre/docs/latest/" target="_blank" rel="noopener">Weinre</a>是一个强大的网页调试工具，可以实现跨终端的远程调试，配合搭建本地服务器，更可以方便地直接在手机上调试本地代码。只需要简单的几步设定，产品人员也可以把真机调试掌握在手，拒绝webview的各种坑。以下为Mac下的简单教程。<br><a id="more"></a></p>
-<h3 id="利用Node-js-Express快速搭建本地服务器环境"><a href="#利用Node-js-Express快速搭建本地服务器环境" class="headerlink" title="利用Node.js+Express快速搭建本地服务器环境"></a>利用Node.js+Express快速搭建本地服务器环境</h3><ol>
+        <p>在进行移动网页开发的时候，利用Chrome自带的Emulation在PC上进行调试是非常方便的。而在Mac上利用Safari的开发功能，也可以实现在移动设备的Safari同步调试效果。但是Chrome无法替代真机效果，而Safari大法无法支持其他App的webview效果（除非你是该App的开发者），Android等其他设备的需求也无法满足。<a href="http://people.apache.org/~pmuellr/weinre/docs/latest/" target="_blank" rel="noopener">Weinre</a>是一个强大的网页调试工具，可以实现跨终端的远程调试，配合搭建本地服务器，更可以方便地直接在手机上调试本地代码。只需要简单的几步设定，产品人员也可以把真机调试掌握在手，拒绝webview的各种坑。以下为Mac下的简单教程。</p>
+<a id="more"></a>
+<h3 id="利用nodejsexpress快速搭建本地服务器环境"><a class="markdownIt-Anchor" href="#利用nodejsexpress快速搭建本地服务器环境"></a> 利用Node.js+Express快速搭建本地服务器环境</h3>
+<ol>
 <li>下载并安装<a href="http://nodejs.org" target="_blank" rel="noopener">node.js</a>，不过建议使用nvm安装，不会弄乱你的Node版本。</li>
 <li><code>npm install express</code> 安装Express。</li>
 <li><code>express project</code> 新建网页项目。</li>
@@ -196,7 +198,8 @@
 <li><code>npm start</code> 启动Web服务器。</li>
 <li>访问<code>http://localhost:3000</code>，就可以看到本地网页了。</li>
 </ol>
-<h3 id="安装配置Weinre"><a href="#安装配置Weinre" class="headerlink" title="安装配置Weinre"></a>安装配置Weinre</h3><ol>
+<h3 id="安装配置weinre"><a class="markdownIt-Anchor" href="#安装配置weinre"></a> 安装配置Weinre</h3>
+<ol>
 <li><code>sudo npm -g install weinre</code> 安装Weinre</li>
 <li><code>weinre --boundHost -all-</code> 绑定本机当前IP地址</li>
 <li><code>weinre --httpPort 8081</code> 指定Weinre服务器端口或者使用默认的8080</li>
@@ -207,7 +210,12 @@
 <li>刷新Weinre调试界面，Targets处应该就出现你的手机正在访问的信息。</li>
 <li>然后就可以进入Elements开始快乐地debugging啦，手机上会同步调试效果。</li>
 </ol>
-<h3 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h3><p><a href="http://thx.github.io/mobile/debugging-in-mobile/" target="_blank" rel="noopener">强烈推荐：无线调试攻略</a><br><a href="http://js8.in/2013/11/20/%E4%BA%94%E4%B8%AA%E4%BD%A0%E5%BF%85%E9%A1%BB%E7%9F%A5%E9%81%93%E7%9A%84javascript%E5%92%8Cweb-debug%E6%8A%80%E6%9C%AF/" target="_blank" rel="noopener">五个你必须知道的javascript和web debug技术</a><br><a href="http://www.iinterest.net/2012/02/08/debugging-mobile-web-applications-with-the-weinre/" target="_blank" rel="noopener">使用Weinre调试Mobile Web</a><br><a href="http://www.cnblogs.com/lhb25/p/debug-mobile-site-and-app-with-weinre.html" target="_blank" rel="noopener">使用 Weinre 调试移动网站及 PhoneGap 应用</a><br><a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm安装和使用</a></p>
+<h3 id="参考资源"><a class="markdownIt-Anchor" href="#参考资源"></a> 参考资源</h3>
+<p><a href="http://thx.github.io/mobile/debugging-in-mobile/" target="_blank" rel="noopener">强烈推荐：无线调试攻略</a><br>
+<a href="http://js8.in/2013/11/20/%E4%BA%94%E4%B8%AA%E4%BD%A0%E5%BF%85%E9%A1%BB%E7%9F%A5%E9%81%93%E7%9A%84javascript%E5%92%8Cweb-debug%E6%8A%80%E6%9C%AF/" target="_blank" rel="noopener">五个你必须知道的javascript和web debug技术</a><br>
+<a href="http://www.iinterest.net/2012/02/08/debugging-mobile-web-applications-with-the-weinre/" target="_blank" rel="noopener">使用Weinre调试Mobile Web</a><br>
+<a href="http://www.cnblogs.com/lhb25/p/debug-mobile-site-and-app-with-weinre.html" target="_blank" rel="noopener">使用 Weinre 调试移动网站及 PhoneGap 应用</a><br>
+<a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm安装和使用</a></p>
 
       
     </div>

@@ -179,23 +179,31 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目标网页"><span class="toc-text">目标网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析xpath"><span class="toc-text">分析xpath</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#爬虫编写"><span class="toc-text">爬虫编写</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目标网页"><span class="toc-text"> 目标网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析xpath"><span class="toc-text"> 分析xpath</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#爬虫编写"><span class="toc-text"> 爬虫编写</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <p><a href="http://scrapy.org/" target="_blank" rel="noopener">Scrapy</a>是一款纯Python爬虫框架，安装使用据说都很方便。作为一个编程白痴，一边看官方文档上手，一边恶补基础概念，遇到问题就用stackoverflow搜索，经过3天折腾终于基本实现了初步的抓取目标：抓取外交部某栏目下的某一篇新闻的所有正文文字，保存到本地。<br><a id="more"></a></p>
-<h3 id="目标网页"><a href="#目标网页" class="headerlink" title="目标网页"></a>目标网页</h3><p><a href="http://www.fmprc.gov.cn/mfa_chn/wjdt_611265/fyrbt_611275/t1040553.shtml" target="_blank" rel="noopener">http://www.fmprc.gov.cn/mfa_chn/wjdt_611265/fyrbt_611275/t1040553.shtml</a></p>
-<h3 id="分析xpath"><a href="#分析xpath" class="headerlink" title="分析xpath"></a>分析xpath</h3><p>需要抓取的是文章标题、发表日期和正文，对应的xpath是:</p>
-<p><strong>title：</strong><acronym>//div[@id=’title’]/h2</acronym><br><strong>date：</strong><acronym>//div[@class=’data’]</acronym><br><strong>content：</strong><acronym>//div[@id=’doccontent’]</acronym></p>
-<p>（chrome里选择的xpath是<acronym>//[@id=”title”]</acronym>，实际上还需要加上<strong>h2</strong>，导致我一开始抓不到标题）</p>
-<h3 id="爬虫编写"><a href="#爬虫编写" class="headerlink" title="爬虫编写"></a>爬虫编写</h3><ul>
-<li>首先新建一个项目<code>$ scrapy startproject fmprc</code></li>
-</ul>
+        <p><a href="http://scrapy.org/" target="_blank" rel="noopener">Scrapy</a>是一款纯Python爬虫框架，安装使用据说都很方便。作为一个编程白痴，一边看官方文档上手，一边恶补基础概念，遇到问题就用stackoverflow搜索，经过3天折腾终于基本实现了初步的抓取目标：抓取外交部某栏目下的某一篇新闻的所有正文文字，保存到本地。</p>
+<a id="more"></a>
+<h3 id="目标网页"><a class="markdownIt-Anchor" href="#目标网页"></a> 目标网页</h3>
+<p><a href="http://www.fmprc.gov.cn/mfa_chn/wjdt_611265/fyrbt_611275/t1040553.shtml" target="_blank" rel="noopener">http://www.fmprc.gov.cn/mfa_chn/wjdt_611265/fyrbt_611275/t1040553.shtml</a></p>
+<h3 id="分析xpath"><a class="markdownIt-Anchor" href="#分析xpath"></a> 分析xpath</h3>
+<p>需要抓取的是文章标题、发表日期和正文，对应的xpath是:</p>
+<p><strong>title：</strong><acronym>//div[@id=‘title’]/h2</acronym><br>
+<strong>date：</strong><acronym>//div[@class=‘data’]</acronym><br>
+<strong>content：</strong><acronym>//div[@id=‘doccontent’]</acronym></p>
+<p>（chrome里选择的xpath是<acronym>//[@id=“title”]</acronym>，实际上还需要加上<strong>h2</strong>，导致我一开始抓不到标题）</p>
+<h3 id="爬虫编写"><a class="markdownIt-Anchor" href="#爬虫编写"></a> 爬虫编写</h3>
 <ul>
-<li>进入下一层fmprc_crawl目录里编辑items.py，定义需要抓取的内容，新建一个FmprcItem，包含三个目标：</li>
+<li>
+<p>首先新建一个项目<code>$ scrapy startproject fmprc</code></p>
+</li>
+<li>
+<p>进入下一层fmprc_crawl目录里编辑items.py，定义需要抓取的内容，新建一个FmprcItem，包含三个目标：</p>
+</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from scrapy.item import Item, Field</span><br><span class="line"></span><br><span class="line">class FmprcItem(Item):</span><br><span class="line">    title = Field()</span><br><span class="line">    date = Field()</span><br><span class="line">    content = Field()</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
 <ul>
