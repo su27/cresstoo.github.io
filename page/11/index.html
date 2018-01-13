@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="I'M DURAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://duran.im/page/11/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> I'M DURAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">I'M DURAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">I'M DURAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts">
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2014/12/14/VPN-automator/">用Automator实现开机自动连接VPN</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2014-12-14
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>自从Dropbox被墙之后，同步就成了一件很肉的事，而我总是忘记开VPN把文件同步到最新。为了搞一个工作流必须保证Dropbox一打开就自动同步，于是利用Mac自带的Automator中执行AppleScript来完成一个开机自动连接动作。</p>
+<h3 id="STEP-1"><a href="#STEP-1" class="headerlink" title="STEP 1"></a>STEP 1</h3><p>打开Automator，新建<code>应用程序</code></p>
+<p><img src="http://7qn9uj.com1.z0.glb.clouddn.com/media/automator-1.png" alt="Automator"></p>
+<h3 id="STEP-2"><a href="#STEP-2" class="headerlink" title="STEP 2"></a>STEP 2</h3><p>在<code>实用工具</code>中选择<code>运行AppleScript</code></p>
+<h3 id="STEP-3"><a href="#STEP-3" class="headerlink" title="STEP 3"></a>STEP 3</h3><p>在脚本编辑器中填入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tell application &quot;System Events&quot;</span><br><span class="line">    tell current location of network preferences</span><br><span class="line">        set VPN to &quot;MyVPN&quot;</span><br><span class="line">        set VPNactive to connected of current configuration of service VPN</span><br><span class="line">        if VPNactive then</span><br><span class="line">            disconnect service VPN</span><br><span class="line">        else</span><br><span class="line">            connect service VPN</span><br><span class="line">        end if</span><br><span class="line">    end tell</span><br><span class="line">end tell</span><br></pre></td></tr></table></figure>
+<p>其中<code>MyVPN</code>为你的VPN服务名称</p>
+<h3 id="STEP-4"><a href="#STEP-4" class="headerlink" title="STEP 4"></a>STEP 4</h3><p>取个名字，例如<code>Ladder</code>保存到应用程序文件夹</p>
+<h3 id="STEP-5"><a href="#STEP-5" class="headerlink" title="STEP 5"></a>STEP 5</h3><p>给这个App弄一个炫酷的图标。<br>画一个icon或者找一个icon图片，用预览打开全选-复制，再右键点击App，打开显示简介，选中左上角的图标，粘贴。</p>
+<p><img src="http://7qn9uj.com1.z0.glb.clouddn.com/media/automator-2.png" alt="new icon"></p>
+<h3 id="STEP-6"><a href="#STEP-6" class="headerlink" title="STEP 6"></a>STEP 6</h3><p>拖动图标到Dock上，设置登录时打开。这样开机之后VPN就可以自动连接了，也可以在Dock上快速操作连接/断开VPN。</p>
+<p><img src="http://7qn9uj.com1.z0.glb.clouddn.com/media/automator-3.png" alt="dock status"></p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    
+      <a class="prev" href="/page/10/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    
+    
+      <a class="next" href="/page/12/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+          </div>
+          
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">cress</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

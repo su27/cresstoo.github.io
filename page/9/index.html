@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="I'M DURAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://duran.im/page/9/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> I'M DURAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">I'M DURAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">I'M DURAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts">
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2015/07/29/iOSAnimation101/">iOS动画入门学习</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2015-07-29
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>学习了林永坚老师的<a href="http://www.imooc.com/learn/392" target="_blank" rel="noopener">iOS动画入门</a>、<a href="http://www.imooc.com/learn/395" target="_blank" rel="noopener">iOS动画进阶</a>两个课程，包含iOS几种基础动画的实现方法。</p>
+<h3 id="iOS基本动画方法"><a href="#iOS基本动画方法" class="headerlink" title="iOS基本动画方法"></a>iOS基本动画方法</h3><p><img src="http://7qn9uj.com1.z0.glb.clouddn.com/githubiOSAnimation.png" alt="image"></p>
+<ul>
+<li><h4 id="position-位置"><a href="#position-位置" class="headerlink" title="position 位置"></a>position 位置</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UIView.animateWithDuration(1, animations:&#123;</span><br><span class="line">self.greenSquare.center.x = self.view.bounds.width - self.greenSquare.center.x</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="opacity-透明度"><a href="#opacity-透明度" class="headerlink" title="opacity 透明度"></a>opacity 透明度</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UIView.animateWithDuration(1, animations: &#123;</span><br><span class="line">    self.greenSquare.alpha = 0.1</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="scale-缩放"><a href="#scale-缩放" class="headerlink" title="scale 缩放"></a>scale 缩放</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UIView.animateWithDuration(1, animations: &#123;</span><br><span class="line">    self.greenSquare.transform = CGAffineTransformMakeScale(2.0, 2.0)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="color-变色"><a href="#color-变色" class="headerlink" title="color 变色"></a>color 变色</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UIView.animateWithDuration(1, animations: &#123;</span><br><span class="line">    self.greenSquare.backgroundColor = UIColor.redColor()</span><br><span class="line">    self.name.textColor = UIColor.whiteColor()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="rotation-旋转"><a href="#rotation-旋转" class="headerlink" title="rotation 旋转"></a>rotation 旋转</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func rotation()&#123;</span><br><span class="line">UIView.animateWithDuration(0.5, delay: 0, options: .CurveLinear, animations: &#123;</span><br><span class="line">     self.spin.transform = CGAffineTransformRotate(self.spin.transform, CGFloat(M_PI))</span><br><span class="line"> &#125;) &#123;(finished) -&gt; Void in</span><br><span class="line">         self.rotation()</span><br><span class="line"> &#125;&#125;</span><br><span class="line">override func viewDidAppear(animated: Bool) &#123;</span><br><span class="line">     super.viewDidAppear(animated)</span><br><span class="line"> 	self.rotation()</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="repeat-重复"><a href="#repeat-重复" class="headerlink" title="repeat 重复"></a>repeat 重复</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">UIView.animateKeyframesWithDuration(1, delay: 0, options: .Repeat, animations: &#123;</span><br><span class="line">    self.redSquare.center.x = self.view.bounds.width - self.redSquare.center.x</span><br><span class="line">&#125;, completion: nil)</span><br><span class="line"></span><br><span class="line">UIView.animateKeyframesWithDuration(1, delay: 0, options: .Repeat | .Autoreverse, animations: &#123;</span><br><span class="line">    self.greenSquare.center.x = self.view.bounds.width - self.greenSquare.center.x</span><br><span class="line">    &#125;, completion: nil)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="easing-缓动动画"><a href="#easing-缓动动画" class="headerlink" title="easing 缓动动画"></a>easing 缓动动画</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">	UIView.animateWithDuration(1, delay: 0, options: .CurveEaseIn, animations: &#123;</span><br><span class="line">	self.redSquare.center.x = self.view.bounds.width - self.redSquare.center.x</span><br><span class="line">     &#125;, completion: nil)// EaseIn Animation</span><br><span class="line"> </span><br><span class="line">UIView.animateWithDuration(1, delay: 0, options: .CurveEaseOut, animations: &#123;</span><br><span class="line">	self.greenSquare.center.x = self.view.bounds.width - self.greenSquare.center.x</span><br><span class="line">     &#125;, completion: nil)// EaseOut Animation</span><br><span class="line"> </span><br><span class="line">UIView.animateWithDuration(1, delay: 0, options: .CurveEaseInOut, animations: &#123;</span><br><span class="line">     self.yellowSquare.center.x = self.view.bounds.width - self.yellowSquare.center.x</span><br><span class="line">     &#125;, completion: nil)// EaseIn and EaseOut Animation</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="spring-弹性动画"><a href="#spring-弹性动画" class="headerlink" title="spring 弹性动画"></a>spring 弹性动画</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">UIView.animateWithDuration(5, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 0, options: nil, animations: &#123;</span><br><span class="line">    self.redSquare.center.x = self.view.bounds.width - self.redSquare.center.x</span><br><span class="line">&#125;, completion: nil)</span><br><span class="line"></span><br><span class="line">UIView.animateWithDuration(5, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 1, options: nil, animations: &#123;</span><br><span class="line">    self.greenSquare.center.x = self.view.bounds.width - self.greenSquare.center.x</span><br><span class="line">    &#125;, completion: nil)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="What-I-Learned"><a href="#What-I-Learned" class="headerlink" title="What I Learned"></a>What I Learned</h4><p>通过3个小时学习</p>
+<ol>
+<li><p>对操作TableView和UIView动画基础代码比较熟悉</p>
+</li>
+<li><p>对缓动动画和弹性动画的原理和实现有了初步了解</p>
+</li>
+</ol>
+<h3 id="旋转动画实例"><a href="#旋转动画实例" class="headerlink" title="旋转动画实例"></a>旋转动画实例</h3><p><img src="http://7qn9uj.com1.z0.glb.clouddn.com/rotation.gif" alt="image"></p>
+<p>rotation这个例子对我来说略微复杂的地方在于，为了实现重复执行360°旋转，老师在这里封装了一个函数来循环执行。事后需要从头补下课。</p>
+<h3 id="缓动动画和弹性动画实例"><a href="#缓动动画和弹性动画实例" class="headerlink" title="缓动动画和弹性动画实例"></a>缓动动画和弹性动画实例</h3><p><img src="http://7qn9uj.com1.z0.glb.clouddn.com/easing.gif" alt="image"></p>
+<p><img src="http://7qn9uj.com1.z0.glb.clouddn.com/spring.gif" alt="image"></p>
+<p>easing和spring理解和书写都挺简单的，主要是要理解：</p>
+<p><strong>缓动动画三种属性</strong></p>
+<ul>
+<li><p><code>option: .CurveEaseIn // 缓进</code></p>
+</li>
+<li><p><code>option: .CurveEaseOut // 缓出</code></p>
+</li>
+<li><p><code>option: .CurveEaseInOut // 缓进缓出</code></p>
+</li>
+</ul>
+<p><strong>弹力动画两个重要属性（iOS7以上版本支持）</strong></p>
+<ul>
+<li><code>usingSpringWithDamping //阻尼大小</code></li>
+<li><code>initialSpringVelocity //初始速度</code> </li>
+</ul>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    
+      <a class="prev" href="/page/8/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    
+    
+      <a class="next" href="/page/10/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+          </div>
+          
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">cress</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
